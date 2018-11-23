@@ -1,12 +1,15 @@
-// swift-tools-version:3.1
+// swift-tools-version:4.2
 import PackageDescription
 
 let package = Package(
 	name: "Base58",
-	targets: [
-		Target(name: "Base58", dependencies: ["CBase58"])
-	],
 	dependencies: [
-		.Package(url: "https://github.com/IBM-Swift/BlueCryptor.git", majorVersion: 0)
+		.package(url: "https://github.com/IBM-Swift/BlueCryptor.git", from: "1.0.20")
+	],
+	targets: [
+		.target(
+			name: "Base58", 
+			dependencies: ["CBase58"]
+		)
 	]
 )
